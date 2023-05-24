@@ -9,7 +9,7 @@ import (
 func main() {
 	deck := deck.New(deck.OptionSort(
 		func(i, j deck.Card) bool {
-			return i.Suit > j.Suit || i.Suit == j.Suit && i.Value > j.Value
+			return i.Suit > j.Suit || i.Suit == j.Suit && i.Value > j.Va
 		}),
 	)
 
