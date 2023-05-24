@@ -90,16 +90,6 @@ func OptionShuffle() Option {
 	}
 }
 
-// OptionAddJokers adds n arbitary Jokers to the end of a deck
-func OptionAddJokers(n int) Option {
-	return func(deck []Card) []Card {
-		for i := 1; i <= n; i++ {
-			deck = append(deck, Card{Suit: SuitJoker})
-		}
-		return deck
-	}
-}
-
 // OptionExclude uses fn to know which cards to exludes from a deck
 func OptionExclude(fn func(Card) bool) Option {
 	return func(deck []Card) []Card {
