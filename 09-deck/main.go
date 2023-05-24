@@ -3,10 +3,15 @@ package main
 import (
 	"fmt"
 
-	"golang/08-deck/deck"
+	"github.com/amirraouf/golang/09-deck/deck"
 )
 
 func main() {
-	deck := deck.New()
-	fmt.Printf(deck)
+	deck := deck.New(deck.OptionSort(
+		func(i, j deck.Card) bool {
+			return i.Suit > j.Suit || i.Suit == j.Suit && i.Value > j.Value
+		}),
+	)
+
+	fmt.Println(deck)
 }
